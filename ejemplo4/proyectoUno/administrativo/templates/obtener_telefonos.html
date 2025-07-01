@@ -1,0 +1,44 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Estudiantes
+{% endblock %}
+
+{% block content %}
+<h3>Número de Telefonos {{ numero_telefonos }}</h3>
+
+<table id="tabla_datos">
+
+  <thead>
+    <tr>
+      <th>Telefono</th>
+      <th>Tipo</th>
+      <th>Estudiante</th>
+
+    </tr>
+  </thead>
+
+  {% for t in telefonos %}
+  <tr>
+    <td> {{t.telefono}} </td>
+    <td> <a href="{% url 'obtener_estudiante' e.id %}">ver</a> </td>
+    <td> <a href="{% url 'editar_estudiante' e.id %}">editar</a> </td>
+    <td>
+      [<a href="{% url 'eliminar_estudiante' e.id %}"
+      onclick="return confirm('¿Está seguro de la eliminación?')" >
+      eliminar</a>]
+    </td>
+    <td>
+
+    </td>
+
+  </tr>
+  {% endfor %}
+</table>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tabla_datos').DataTable();
+  });
+</script>
+{% endblock %}
