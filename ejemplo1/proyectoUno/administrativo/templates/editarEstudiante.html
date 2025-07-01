@@ -1,5 +1,14 @@
+{% extends "master.html" %}
 
-<h2>Editar Estudiante</h2>
+{% block title %}
+  Editar Estudiante
+{% endblock %}
+
+
+
+{% block content %}
+
+
 
 <form action="" method="post">
   {% csrf_token %}
@@ -8,3 +17,4 @@
 </form>
 
 [<a href="{% url 'index' %}">inicio</a>]
+{% endblock %}

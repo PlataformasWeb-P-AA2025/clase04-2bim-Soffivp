@@ -1,4 +1,11 @@
-<h2>Crear Número Telefónico</h3>
+{% extends "master.html" %}
+
+{% block title %}
+  Crear Número Telefónico
+{% endblock %}
+
+
+{% block content %}
 
 <form action="" method="post">
 
@@ -10,3 +17,6 @@
 </form>
 
 [<a href="{% url 'index' %}">inicio</a>]
+
+
+{% endblock %}
